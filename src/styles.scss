@@ -1,0 +1,17 @@
+$front-color: rgba(255, 255, 255, 0.8);
+$background-color: rgba(22, 21, 29, 0.7);
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  min-height: 100%;
+
+  .app {
+    color: $front-color;
+    background-color: $background-color;
+  }
+}
