@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { hot } from 'react-hot-loader/root';
-
-import "./styles.scss";
+import { AppShell } from './components/app-shell/app-shell';
+import "./app.scss";
 
 interface AppProps {
    name: string
@@ -10,7 +10,11 @@ interface AppProps {
 class App extends React.Component<AppProps> {
   render() {
     const { name } = this.props;
-    return <div className="app">Hello {name}</div>;
+    return (
+      <div className="app">
+        <AppShell />
+      </div>
+    );
   }
 }
 
