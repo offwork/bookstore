@@ -14,7 +14,7 @@ export const Books = () => {
   const loaded = useSelector(selectBooksLoaded);
 
   useEffect(() => {
-    dispatch(fetchBooks('Greensall'));
+    dispatch(fetchBooks());
   }, [dispatch]);
 
   return (

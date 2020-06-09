@@ -32,6 +32,7 @@ export const booksSlice = createSlice({
   reducers: {
     getBooksStart: (state, action: PayloadAction<undefined>) => {
       state.loaded = false;
+      state.entities = []
     },
     getBooksSuccess: (state, action: PayloadAction<Book[]>) => {
       state.loaded = true;
@@ -48,7 +49,7 @@ export const booksSlice = createSlice({
  */
 export const booksReducer = booksSlice.reducer;
 
-/*
+/* TODO: ``buradan guncellenebilir``
  * Export action creators to be dispatched. For use with the `useDispatch` hook.
  *
  * e.g.
@@ -97,10 +98,8 @@ export const selectBooksError = createSelector(
  * Export default effect, handled by redux-thunk.
  * You can replace this with your own effects solution.
  */
-export const fetchBooks = (query: string): AppThunk => async dispatch => {
-  const url = query.length < 1 ?
-    'http://localhost:3000/books' :
-    `http://localhost:3000/books?q=${query}`;
+export const fetchBooks = (): AppThunk => async dispatch => {
+  const url = 'http://localhost:3000/books';
 
   try {
     dispatch(getBooksStart());

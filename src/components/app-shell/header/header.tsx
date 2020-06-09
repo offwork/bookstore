@@ -8,7 +8,7 @@ import {
   NavbarGroup,
   NavbarHeading,
 } from '@blueprintjs/core';
-import SerachBox from '../../searchbox/search-box'
+import SearchBox from '../../features/searchbox/search-box'
 import './header.scss';
 
 export const Header = () => {
@@ -20,7 +20,7 @@ export const Header = () => {
         <div className="shell-header">
           <Button className={Classes.MINIMAL} icon="home" text="Home" />
           <Button className={Classes.MINIMAL} icon="document" text="Files" />
-          <SerachBox />
+          <SearchBox />
         </div>
       </NavbarGroup>
     </Navbar>

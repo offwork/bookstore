@@ -9,7 +9,7 @@ import {
   useLocation
 } from "react-router-dom";
 import { AppShell } from './components/app-shell/app-shell';
-import { Books } from './components/books/books';
+import Books from './components/features/books/books';
 import "./app.scss";
 
 class App extends React.Component {

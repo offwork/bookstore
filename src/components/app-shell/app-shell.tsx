@@ -2,7 +2,6 @@ import React, { ReactNode, Component } from 'react';
 import Header from './header/header';
 import Content from './content/content';
 import Footer from './footer/footer';
-
 import './app-shell.scss';
 
 /* eslint-disable-next-line */
