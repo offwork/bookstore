@@ -8,7 +8,7 @@ export interface ContentProps {
 
 export const Content: FC<ContentProps> = ({ children }) => {
   return (
-    <div className="content">
+    <div className="shell-content">
       {children}
     </div>
   );

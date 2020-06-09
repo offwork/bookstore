@@ -8,20 +8,18 @@ import {
 import BookList from './list';
 import './books.scss';
 
-
-
 export const Books = () => {
   const dispatch = useDispatch();
   const entities = useSelector(selectBooksEntities);
   const loaded = useSelector(selectBooksLoaded);
 
   useEffect(() => {
-    dispatch(fetchBooks());
+    dispatch(fetchBooks('Greensall'));
   }, [dispatch]);
 
   return (
-    <div>
-      <BookList isLoading={loaded} list={entities} className="" />
+    <div className="books">
+      <BookList isLoading={loaded} list={entities} />
     </div>
   );
 };

@@ -1,0 +1,16 @@
+.books {
+
+  :not(:last-child) {
+    margin-bottom: 12px;
+  }
+
+  .list-container {
+    padding: 0;
+    margin: 0;
+  
+    & > .wrap {
+      flex-wrap: wrap;
+    } 
+  }
+}
+

@@ -97,14 +97,18 @@ export const selectBooksError = createSelector(
  * Export default effect, handled by redux-thunk.
  * You can replace this with your own effects solution.
  */
-export const fetchBooks = (): AppThunk => async dispatch => {
+export const fetchBooks = (query: string): AppThunk => async dispatch => {
+  const url = query.length < 1 ?
+    'http://localhost:3000/books' :
+    `http://localhost:3000/books?q=${query}`;
+
   try {
     dispatch(getBooksStart());
     // Replace this with your custom fetch call.
     // For example, `const data = await myApi.getBooks`;
     // Right now we just load an empty array.
     const data = await axios
-      .get<BooksResponse>('http://localhost:3000/books')
+      .get<BooksResponse>(url)
       .then(response => { console.log(response);
         return response.data.items});
     dispatch(getBooksSuccess(data));

@@ -8,15 +8,20 @@ import {
   NavbarGroup,
   NavbarHeading,
 } from '@blueprintjs/core';
+import SerachBox from '../../searchbox/search-box'
+import './header.scss';
 
 export const Header = () => {
   return (
     <Navbar>
-      <NavbarGroup align={Alignment.LEFT}>
+      <NavbarGroup align={Alignment.CENTER}>
         <NavbarHeading>Bookstore</NavbarHeading>
         <NavbarDivider />
-        <Button className={Classes.MINIMAL} icon="home" text="Home" />
-        <Button className={Classes.MINIMAL} icon="document" text="Files" />
+        <div className="shell-header">
+          <Button className={Classes.MINIMAL} icon="home" text="Home" />
+          <Button className={Classes.MINIMAL} icon="document" text="Files" />
+          <SerachBox />
+        </div>
       </NavbarGroup>
     </Navbar>
   )

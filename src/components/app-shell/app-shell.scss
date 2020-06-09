@@ -14,3 +14,13 @@
     padding: 24px;
   }
 }
+
+.header {
+  left: 0;
+  position: fixed;
+  right: 0;
+  top: 0;
+  & .bp3-navbar-group {
+    width: 100%;
+  }
+}

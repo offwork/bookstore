@@ -7,16 +7,15 @@ import BookItem from './item';
 export interface BookListProps {
   isLoading: boolean;
   list: Array<Book>;
-  className: string
 }
 
 export const BookList = (props: BookListProps) => {
   return (
-    <div className={props.className}>
+    <div className="list-container">
       { !props.isLoading && <Spinner size={ Spinner.SIZE_LARGE } /> }
       { !!props.list &&
           (props.list.map(book => (
-            <div key={book.id}>
+            <div className="wrap" key={book.id}>
               <BookItem book={book} />
             </div>
         )))
