@@ -1,12 +1,13 @@
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import {
-  getBooksStart,
   fetchBooks,
   selectBooksEntities,
   selectBooksLoaded
 } from './books.slice';
+import BookList from './list';
 import './books.scss';
+
 
 
 export const Books = () => {
@@ -18,14 +19,10 @@ export const Books = () => {
     dispatch(fetchBooks());
   }, [dispatch]);
 
-  const showList = () => {
-    dispatch(getBooksStart())
-  };
-
   return (
-    <ul>
-      {/* <BookList isLoading={loaded} list={entities} /> */}
-    </ul>
+    <div>
+      <BookList isLoading={loaded} list={entities} className="" />
+    </div>
   );
 };
 
