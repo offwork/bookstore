@@ -14,6 +14,15 @@ const middlewares = jsonServer.defaults();
  * GET /posts?_page=7
  * GET /posts?_page=7&_limit=20
  */
+
+router.render = (req, res) => {
+  let result = res.locals.data instanceof Array ? res.locals.data : [res.locals.data];
+
+  res.jsonp({
+    items: result
+  })
+}
+
 server.use(middlewares)
 server.use(router)
 server.listen(3000, () => {
