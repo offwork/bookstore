@@ -1,15 +1,14 @@
-import * as React from 'react';
+import React from 'react';
 import { hot } from 'react-hot-loader/root';
 import {
   BrowserRouter as Router,
   Route,
-  Link,
   Switch,
-  Redirect,
-  useLocation
+  Redirect
 } from "react-router-dom";
 import { AppShell } from './components/app-shell/app-shell';
 import Books from './components/features/books/books';
+import Book from './components/features/book/book';
 import "./app.scss";
 
 class App extends React.Component {
@@ -20,6 +19,7 @@ class App extends React.Component {
           <Router>
             <Switch>
               <Route exact path="/" component={Books} />
+              <Route path="/:id" component={Book} />
               <Redirect path='*' to='/' />
             </Switch>
           </Router>

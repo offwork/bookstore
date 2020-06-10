@@ -11,11 +11,11 @@ export interface BookListProps {
 
 export const BookList = (props: BookListProps) => {
   return (
-    <div className="list-container">
+    <div className="list">
       { !props.isLoading && <Spinner size={ Spinner.SIZE_LARGE } /> }
       { !!props.list &&
           (props.list.map(book => (
-            <div className="wrap" key={book.id}>
+            <div className="list-item" key={book.id}>
               <BookItem book={book} />
             </div>
         )))
